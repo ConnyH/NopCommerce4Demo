@@ -15,15 +15,15 @@
   </PropertyGroup>
   
   <!-- This task deletes files if they exist -->
-  <UsingTask TaskName="NopClearPluginsPath" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll">  
+  <!--<UsingTask TaskName="NopClearPluginsPath" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll">  
     <ParameterGroup>
-      <!-- Paths for search and delete files -->
+      --><!-- Paths for search and delete files --><!--
       <Paths ParameterType="System.String" />  
-      <!-- File names without extensions for delete -->
+      --><!-- File names without extensions for delete --><!--
       <FileNames ParameterType="System.String" />  
-      <!-- Plugin path for cleaning. If it's set and not empty, then it replaces the "Paths" parameter -->
+      --><!-- Plugin path for cleaning. If it's set and not empty, then it replaces the "Paths" parameter --><!--
       <PluginPath ParameterType="System.String" />
-      <!-- Specifies whether to need save folders with locales (e.g. \en, \de) in output of plugins -->
+      --><!-- Specifies whether to need save folders with locales (e.g. \en, \de) in output of plugins --><!--
       <SaveLocalesFolders ParameterType="System.Boolean" />
     </ParameterGroup>    
     <Task>         
@@ -90,7 +90,7 @@
         ]]>  
       </Code>  
     </Task>  
-  </UsingTask>
+  </UsingTask>-->
 
   <Target Name="NopClear"> 
     <ItemGroup>
@@ -107,7 +107,7 @@
     <!-- When .NET Core builds a project, it copies all referenced libraries to the output folder.
     For plugins it creates too many unnecessary files that just take up space.
     At the moment you can't disable this behavior. That's why we have to manually delete all unnecessary libraries from plugin output directories. -->
-    <NopClearPluginsPath Paths="@(PluginsFolders)" FileNames="@(DllFileNames)" PluginPath="$(PluginPath)" SaveLocalesFolders="$(SaveLocalesFolders)"/>
+    <!--<NopClearPluginsPath Paths="@(PluginsFolders)" FileNames="@(DllFileNames)" PluginPath="$(PluginPath)" SaveLocalesFolders="$(SaveLocalesFolders)"/>-->
   </Target> 
       
 </Project>
