@@ -1,0 +1,5 @@
+{
+  "DataProvider": "sqlserver",
+  "DataConnectionString": "Data Source=sql.ezyserver.se\\sql14;Initial Catalog=nopCommerce4;Integrated Security=False;Persist Security Info=False;User ID=ezymasterlogin;Password=18Sz3$1T39!k",
+  "RawDataSettings": {}
+}
